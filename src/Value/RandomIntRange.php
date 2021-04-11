@@ -18,7 +18,7 @@ class RandomIntRange
         $range = range($min, $max);
         shuffle($range);
 
-        return array_slice($range, 0, $length);
+        return array_slice($range, 0);
     }
 
     /**
@@ -32,7 +32,7 @@ class RandomIntRange
      */
     public static function validate(int $min, int $max): bool
     {
-        if ($min >= $max || $length <= 0) {
+        if ($min >= $max) {
             throw new \InvalidArgumentException();
         }
 
