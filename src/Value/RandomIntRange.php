@@ -7,15 +7,14 @@ class RandomIntRange
     /**
      * @param int $min
      * @param int $max
-     * @param int $length
      *
      * @return int[]
      *
      * @throws \Exception
      */
-    public static function create(int $min, int $max, int $length): array
+    public static function create(int $min, int $max): array
     {
-        self::validate($min, $max, $length);
+        self::validate($min, $max);
         $range = range($min, $max);
         shuffle($range);
 
@@ -31,7 +30,7 @@ class RandomIntRange
      *
      * @throws \Exception
      */
-    public static function validate(int $min, int $max, int $length): bool
+    public static function validate(int $min, int $max): bool
     {
         if ($min >= $max || $length <= 0) {
             throw new \InvalidArgumentException();

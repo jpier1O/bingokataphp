@@ -41,7 +41,7 @@ final class NumberPositive
     private function setNumber(int $number): void
     {
         if ($number < 1) {
-            throw new \InvalidArgumentException('Please enter a positive int');
+            throw new \InvalidArgumentException('Please enter a positive number');
         }
 
         $this->number = $number;
